@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { JourneyPicker } from '../../components/JourneyPicker';
 import { JourneyDetail } from '../../components/JourneyDetail';
+import { SeletedSeat } from '../../components/SelectedSeat';
 
 export const HomePage = () => {
   const [journey, setJourney] = useState(null);
@@ -16,6 +17,7 @@ export const HomePage = () => {
       <JourneyPicker onJourneyChange={handleJourneyChange} />
       {/* <p>Nalezeno spojení s id {journey && journey.journeyId}</p> */}
       {journey && <JourneyDetail journey={journey.stops} />}
+      <SeletedSeat number={journey && journey.autoSeat} />
     </main>
   );
 };
